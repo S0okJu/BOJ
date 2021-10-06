@@ -1,29 +1,19 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <cstdio>
+#include <vector>
 using namespace std;
 
-int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);  
+int main() {
+    int num,tmp;
+    int count[10001] = {0,};
+    scanf("%d",&num);
 
-    vector<int> arr;
-    int N;  
-    int a;
-    cin >> N;  
-
-    for(int i = 0 ; i < N ; i++)
+    for(int i = 0; i < num; i++)
     {
-        cin >> a;
-        arr.push_back(a);
-    }
-    sort(arr.begin(),arr.end());    
-
-    for(int i = 0 ; i < N; i++)
-    {
-        cout << arr[i] << '\n';
+        scanf("%d",&tmp);
+        count[tmp]++;
     }
 
-    return 0;
-
+    for(int i = 0; i < 10001; i++)
+        for(int j = 0; j < count[i]; j++)
+            printf("%d\n",i);
 }
