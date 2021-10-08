@@ -25,6 +25,7 @@ int main(){
     for(int firstCard = 0 ; firstCard < N-2; firstCard++){
         sum = 0; // 새로운 maxValue를 구하므로 다시 초기화해준다. 
         sum += game[firstCard];
+        
         for(int secondCard = firstCard+1; secondCard < N-1; secondCard++){
             sum = game[firstCard];// 새로운 maxValue를 구하므로 다시 초기화 해준다. 
             sum += game[secondCard];
