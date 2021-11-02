@@ -15,10 +15,10 @@ int main(){
 
 	for(int i = 1 ; i <= m; i++){
 		for(int j =0;j<=n;j++){
-			if(j-arr[i][0]>=0){
+			if(j-arr[i][0]>=0){ // 해당 챕터를 읽는 경우
 				dp[i][j] = max(dp[i-1][j-arr[i][0]]+arr[i][1],dp[i-1][j]);
 			}
-			else{
+			else{ // 해당 챕터를 읽지 않는 경우
 				dp[i][j] = max(dp[i-1][j],dp[i][j]);
 			}
 		}
