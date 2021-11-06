@@ -25,7 +25,7 @@ int main(){
         cin >> a;
         point.push_back(make_pair(a,i));
     }
-
+ 
     sort(point.begin(),point.end());
 
     int check = 0;
