@@ -17,7 +17,6 @@ int main(){
         if(start+2 <= a.size()){
             for(int i = 0 ;i<7;i++){
                 if(a.substr(start,2)==strList[i]){
-                    cout << 1<<'\n';
                     checkList = true;
                     len++;
                     start+=2;
@@ -28,13 +27,11 @@ int main(){
         if(start+3 <=a.size()){
             if(a.substr(start,3)=="dz="){
                 checkList = true;
-                cout << 2<<'\n';
                 len++;
                 start+=3;
             }
         }
         if(start+1<=a.size()&&checkList == false){
-            cout << 3<<'\n';
             start+=1;
             len++;
         }
