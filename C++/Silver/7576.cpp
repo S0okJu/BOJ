@@ -22,11 +22,10 @@ void bfs(){
             int nx = x + dx[i];
             int ny = y + dy[i];
 
-            // 값이 범위 안에 있거나 0이 아닌 경우 
+            // 값이 범위 안에 없거나 상태가 -1,0인 경우 
             if(nx<0 || nx >=N || ny <0||ny>=M) continue;
             if(a[nx][ny]) continue;
 
-            // 0인경우 1(익었음)으로 표시한다. 
             a[nx][ny] = a[x][y]+1;
             box.push({nx,ny});
         }
@@ -52,18 +51,18 @@ int main() {
                 printf("-1\n");
                 return 0;
             }
-            if (ans < a[i][j]) ans = a[i][j];
+            if (ans < a[i][j]) ans = a[i][j];// 값을 계속 갱신
         }
     }
 
-    printf("\n");
+    /*
+    a[i][j] -> 사과가 전부 익을때 걸린 시간의 최솟값
+    9 8 7 6 5 4 
+    8 7 6 5 4 3 
+    7 6 5 4 3 2 
+    6 5 4 3 2 1 
+    */
 
-    for(int i = 0 ; i < N;i++){
-        for(int j = 0 ; j <M;j++){
-            printf("%d ",a[i][j]);
-        }
-        printf("\n");
-    }
     printf("%d\n", ans-1);
     return 0;
 }
