@@ -38,6 +38,7 @@ int main(){
 
     cin >> N >> M;
     fill(&visited[0][0], &visited[N][M], -1);
+    
     for(int i = 0 ; i < N ;i++){
         string input;
         cin >> input;
