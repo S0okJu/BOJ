@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 #include<queue>
-#include<algorithm>
+#include<string.h>
 using namespace std;
 
 const int ran = 101;
@@ -22,6 +22,7 @@ void bfs(int checkType){
             int curX = q.front().first;
             int curY = q.front().second;
             int curColor = color[curX][curY];
+            cout <<"pop: "<< curX<<", "<<curY<<'\n';
             q.pop();
             for(int i = 0 ; i < 4; i++){
                 int x = curX + dx[i];
@@ -32,12 +33,14 @@ void bfs(int checkType){
                 if((flag && (nextColor=='R' ||nextColor=='G')) || curColor==nextColor ){
                     visited[x][y] = 1;
                     q.push({x,y});
+                    cout << x << " "<<y<<'\n';
                 }
             }
         }
     }
     if(checkType ==0) cnt++;
     else cntBlindness++;
+    cout<<"count Finish!"<<'\n';
 
 }
 
@@ -53,14 +56,14 @@ int main(){
         }
     }
 
-    for(int i=0;i<N;i++){
-        for(int j = 0 ; j < N; j++){
-            if(!visited[i][j]){
-                q.push({i,j});
-                bfs(0);
-            }
-        }
-    }
+    // for(int i=0;i<N;i++){
+    //     for(int j = 0 ; j < N; j++){
+    //         if(!visited[i][j]){
+    //             q.push({i,j});
+    //             bfs(0);
+    //         }
+    //     }
+    // }
 
     memset(visited, 0, sizeof(visited));
 
@@ -71,6 +74,7 @@ int main(){
                 else flag = false;
                 
                 q.push({i,j});
+                cout << i << " "<<j<<'\n';
                 bfs(1);
             }
         }
