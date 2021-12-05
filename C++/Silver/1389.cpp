@@ -54,5 +54,9 @@ int main(){
         }
     }
     cout << midx;
+
+    for(int i = 0 ; i <= 10 ;i++){
+        cout << dist[i]<<" ";
+    }
     return 0;
 }
