@@ -1,1 +1,1 @@
-3
+fill(&visitied[0][0], &visitied[26][26],0);
