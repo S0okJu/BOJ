@@ -56,14 +56,14 @@ int main(){
         }
     }
 
-    // for(int i=0;i<N;i++){
-    //     for(int j = 0 ; j < N; j++){
-    //         if(!visited[i][j]){
-    //             q.push({i,j});
-    //             bfs(0);
-    //         }
-    //     }
-    // }
+    for(int i=0;i<N;i++){
+        for(int j = 0 ; j < N; j++){
+            if(!visited[i][j]){
+                q.push({i,j});
+                bfs(0);
+            }
+        }
+    }
 
     memset(visited, 0, sizeof(visited));
 
@@ -74,7 +74,6 @@ int main(){
                 else flag = false;
                 
                 q.push({i,j});
-                cout << i << " "<<j<<'\n';
                 bfs(1);
             }
         }
