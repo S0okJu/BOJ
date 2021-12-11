@@ -54,7 +54,6 @@ int main(){
         }
     }
 
-    cout << "-----------------------"<<'\n';
     for(int i = 0 ; i< N;i++){
         for(int j = 0 ; j < N;j++){
             if(visitied[i][j]==0){
@@ -69,7 +68,7 @@ int main(){
 
     for(int i=0;i<N;i++){
         for(int j=0;j<N;j++){ 		
-            if(visitied[i][j]!=0){	// 사실상 필요없는 코드, 어차피 해당 인덱스 값만 증가
+            if(visitied[i][j]!=0){	
                 groupCheck[visitied[i][j]]++;
             }
         }
