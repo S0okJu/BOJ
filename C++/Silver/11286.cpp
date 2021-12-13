@@ -34,7 +34,7 @@ int main()
                 cout <<"0"<<'\n';
             }
             else{
-                cout << "pop: "<< q.top().first * q.top().second<<'\n';
+                cout <<q.top().first * q.top().second<<'\n';
                 q.pop();
             }
 
