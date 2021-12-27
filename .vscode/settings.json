@@ -9,6 +9,11 @@
         "vector": "cpp",
         "memory": "cpp",
         "utility": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "tuple": "cpp"
     }
 }
