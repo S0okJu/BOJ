@@ -4,12 +4,6 @@ using namespace std;
 
 int graph[101][101];
 
-queue<int> q;
-
-void bfs(int v){
-    
-}
-
 int main(){
     int N; //정점 수
 
