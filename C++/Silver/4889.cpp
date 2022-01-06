@@ -5,10 +5,10 @@ using namespace std;
 
 int main(){
     int idx = 1;
-    stack<char> st;
 
     while(true){
         string a;
+        stack<char> st;
         int change = 0;
         cin >> a;
 
