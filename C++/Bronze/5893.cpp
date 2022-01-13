@@ -14,7 +14,7 @@ int main(){
         respos--;
 
         if(s[i]=='0')continue;
-        res[respos]++;
+        res[respos]++
     }
 
     for(int i = res.size()-1;i>0;i--){
