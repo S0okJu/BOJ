@@ -38,7 +38,7 @@ int main(){
             q.push({i,j});
             visited[i][j] = true;
             int width = 1;
-            cnt++;
+            cnt++; // 시작 노드 개수 == 나눠진 영역 
 
             while(!q.empty()){
                 int curX = q.front().first;
@@ -48,7 +48,7 @@ int main(){
                 for(int dir = 0 ; dir<4 ;dir++){
                     int nx = curX + moveX[dir];
                     int ny = curY + moveY[dir];
-
+                    // 범위
                     if(nx < 0 || nx >= N || ny < 0 || ny >= M ) continue;
 
                     // 이미 방문했거나 사각형이 막혀있을 경우
@@ -70,6 +70,6 @@ int main(){
     for(int v:ans){
         cout << v << " ";
     }
-
+    return 0;
 
 }
