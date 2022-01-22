@@ -3,9 +3,9 @@
 using namespace std;
 
 int dp[1001];
+int money[1001];
 int main(){
     int N;
-    int *money = new int[N+1];
     
     cin >> N;
     for(int i = 1 ; i <= N ;i++){
@@ -20,16 +20,5 @@ int main(){
     }
     cout << dp[N];
 
-    delete[] money;
+    return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
