@@ -16,17 +16,14 @@ int main(){
         q.push(i);
         desc.push_back(i);
     }
-    int idx = 0;
     while(!q.empty()){
         long long int frontValue = q.front();
-        cout <<idx++<<": "<< frontValue<<'\n';
         q.pop();
-
         for(int i = 0; i<frontValue%10;i++){
             long long int n = 10*frontValue+i;
             desc.push_back(n);
             q.push(n);
-            cout<<idx++<<": "<<n<<'\n';
+
         }
     }
 
