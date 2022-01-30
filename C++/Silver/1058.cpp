@@ -8,18 +8,22 @@ bool areFriends[51][51] = {false,};
 int dp[51][51];
 int main(){
     int N;
-    int ans;
+    int ans = 0;
     cin >> N;
 
     for(int i = 0 ; i < N;i++){
         string input;
         cin >> input;
-        for(int j = 0 ; j< input.size();j++){
+        for(string::size_type j = 0 ; j< input.size();j++){
             if(input[j]=='Y') areFriends[i][j] = true;
             else areFriends[i][j] = false;
         }
     }
-    fill(&dp[0][0],&dp[N][N],le9);
+
+    for(int i=0; i<N; i++){
+        for(int j=0; j<N; j++)
+        dp[i][j] = 1e9;
+    }
 
     for(int i = 0 ; i < N ;i++){
         for(int j = 0 ; j < N;j++){
@@ -37,7 +41,10 @@ int main(){
         for(int i = 0 ; i < N;i++){
             for(int j = 0 ; j < N;j++){
                 if(dp[i][k] + dp[k][j] < dp[i][j]){
+                    cout << dp[i][j]<<" "<<dp[i][k]<<" "<<dp[k][j]<<'\n';
                     dp[i][j] = dp[i][k] + dp[k][j];
+                    cout << "("<<i<<","<<j<<")"<<"="<< "("<<i<<","<<k<<")"<<"+"<< "("<<k<<","<<j<<")"<<'\n';
+                    
                 }
             }
         }
@@ -46,14 +53,14 @@ int main(){
     for(int i = 0 ; i < N;i++){
         int cnt = 0;
         for(int j = 0 ; j < N ; j++){
-            for(i==j) continue;
+            if(i==j) continue;
             if(dp[i][j]<=2){
                 cnt+=1;
             }
         }
         if(cnt > ans) ans = cnt;
     }
-    coout << ans;
+    cout << ans;
 
     return 0;
 }

@@ -12,7 +12,6 @@ bool solve()
 	for (int i = 1; i < n; i++) {
 		for (int j = 0; j < n-i; j++){
 		    arr[i][j] = arr[i - 1][j] + arr[i - 1][j + 1];
-            cout<< "i:"<<i <<" ,j:" << j <<" ,arr:"<<arr[i][j]<<" ,idx:"<<idx++<<'\n';
         }
 	}
 	if (arr[n - 1][0] == m)return true;
@@ -35,15 +34,11 @@ void permutation(int depth){
 		if (!visit[i]) {
 			visit[i] = 1;
 			per[depth] = i + 1;
-            cout << depth<<" ,i: "<<i<<" start"<<'\n';
-            cout<<"i: "<<i<< " ,depth:"<<depth<<" ,per:"<<per[depth]<<" ,idx:"<<idx++<<'\n';
             
 			permutation(depth + 1);
 			per[depth] = 0;
 			visit[i] = 0;
-            cout << depth<<" ,i: "<<i<<" End!"<<'\n';
-
-            
+ 
 		}
 	}
 
