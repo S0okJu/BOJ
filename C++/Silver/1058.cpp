@@ -19,7 +19,7 @@ int main(){
             else areFriends[i][j] = false;
         }
     }
-
+   
     for(int i=0; i<N; i++){
         for(int j=0; j<N; j++)
         dp[i][j] = 1e9;
@@ -41,9 +41,9 @@ int main(){
         for(int i = 0 ; i < N;i++){
             for(int j = 0 ; j < N;j++){
                 if(dp[i][k] + dp[k][j] < dp[i][j]){
-                    cout << dp[i][j]<<" "<<dp[i][k]<<" "<<dp[k][j]<<'\n';
+                    // cout << dp[i][j]<<" "<<dp[i][k]<<" "<<dp[k][j]<<'\n';
                     dp[i][j] = dp[i][k] + dp[k][j];
-                    cout << "("<<i<<","<<j<<")"<<"="<< "("<<i<<","<<k<<")"<<"+"<< "("<<k<<","<<j<<")"<<'\n';
+                    // cout << "("<<i<<","<<j<<")"<<"="<< "("<<i<<","<<k<<")"<<"+"<< "("<<k<<","<<j<<")"<<'\n';
                     
                 }
             }
@@ -54,10 +54,12 @@ int main(){
         int cnt = 0;
         for(int j = 0 ; j < N ; j++){
             if(i==j) continue;
+            // 정점간의 거리가 2이하인 경우 
             if(dp[i][j]<=2){
                 cnt+=1;
             }
         }
+        cout << '\n';
         if(cnt > ans) ans = cnt;
     }
     cout << ans;
