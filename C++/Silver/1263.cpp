@@ -27,7 +27,6 @@ int main(){
     for(int i = 1; i < N;i++){
         if(value >time[i].second){
             value-=(value-time[i].second);
-            cout<< i<<": "<<value<<'\n';
         }
 
         value -=time[i].first;
