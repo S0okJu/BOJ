@@ -7,7 +7,6 @@ int S, J;
 vector<int> sang;
 vector<int> jung;
 
-
 int BinarySearch( int len, int target){
     int start = 0;
     int end = len - 1;
