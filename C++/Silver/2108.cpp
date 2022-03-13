@@ -2,20 +2,68 @@
 #include<vector>
 #include<algorithm>
 #include<cmath>
+#include<map>
 using namespace std;
 
+int mean(vector<int> &a,int n){
+    int sum = 0;
+    for(int i = 0 ; i < n; i++){
+        sum += a[i];
+    }
+    return round(sum / (double)n);
+}
+
+int med(vector<int> &a,int n){
+    return a[n/2];
+}
+
+int freq(vector<int> &a,int n){
+    map<int,int> mapping;
+    int maxF = -1;
+    vector<int> f;
+    for(int i = 0 ; i <n ;i++){
+        if (mapping[a[i]]) mapping[a[i]]++;
+        else{
+            mapping[a[i]] =1;
+        }
+    }
+
+    for(auto p:mapping){
+        if(maxF < p.second){
+            maxF = p.second;
+        }
+    }
+
+    for(auto p:mapping){
+        if(maxF == p.second){
+            f.push_back(p.first);
+        }
+    }
+    sort(f.begin(),f.end());
+    if(f.size()==1) return f[0];
+    else return f[1];
+
+}
+
+int gap(vector<int> &a, int n){
+    int minVal = 4000;
+    int maxVal = -4000;
+    if(a.size()>=2){
+        for(int i = 0 ; i < n;i++){
+            minVal = min(minVal,a[i]);
+            maxVal = max(maxVal,a[i]);
+        }
+        return maxVal - minVal;
+    }
+    return 0;
+    
+}
 int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
 
     int N;
-    double sum = 0;
-    int MaxValue = -1; // 최대 최빈값 구하는 변수
-    bool findSecond = false; // 최빈값이 같은 경우 확인 
-    int FValue; // 최빈값 
-
-    vector<int >freq(8001,0); // 최빈값을 구한느 벡터 
     vector<int> a;
     
     cin >> N;
@@ -25,34 +73,15 @@ int main(){
         cin >> b;
         a.push_back(b);
 
-        int temp = b <= 0 ? abs(b):b +4000; 
-        freq[temp]++;
-
-        MaxValue = max(MaxValue,freq[temp]);
-        sum += b; // 산술 평균을 구하기 위한 합
-        
-
     }
     
     sort(a.begin(),a.end()); 
     // 중앙값을 구하기 위한 값, 최빈값을 사용할때도 사용.
 
-    
-    for(int i = -4000;i<4001;i++){
-        int temp = i<=0?abs(i):i+4000;
-        if(freq[temp]==MaxValue){
-            FValue = i;
-            if(findSecond){
-                break;
-            }
-            findSecond = true;
-        }
-    }
-
-    cout << round(sum/(double)N)<<'\n'; // 산술 평균
+    cout << mean(a,N)<<'\n'; // 산술 평균
     cout << a[N/2]<<'\n'; // 중앙값
-    cout<< FValue<<'\n';
-    cout<< a[N-1] - a[0]<< '\n'; // 범위 
+    cout<< freq(a,N)<<'\n';
+    cout<< gap(a,N)<< '\n'; // 범위 
 
 
     return 0;
