@@ -17,16 +17,14 @@ void selection_sort(int n, int a[],int k){
         if(last!=loc){
             swap(a[last],a[loc]);
             sum++;
-            
             if(sum==k){
-                for(int i = 0 ; i < n;i++){
+                for(int i= 0 ; i < n;i++){
                     cout << a[i]<<" ";
                 }
                 return;
             }
-
         }
-        
+
     }
     if(sum < k){
         cout <<-1;
@@ -43,7 +41,6 @@ int main(){
     for(int i = 0 ; i <N;i++){
         cin >> input[i];
     }
-
     selection_sort(N,input, K);
     delete[] input;
     return 0;
