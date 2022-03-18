@@ -14,6 +14,7 @@ int main(){
             game[i] = 1;
         }
     }
+
     if(game[N]==1){
         cout << "SK";
     }
