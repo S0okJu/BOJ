@@ -25,5 +25,6 @@ int main(){
     else{
         cout <<"gosu";
     }
+    
     return 0;
 }
