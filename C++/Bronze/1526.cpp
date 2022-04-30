@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int n,ans;
 void dfs(int sum){
     if (sum > n) return;
