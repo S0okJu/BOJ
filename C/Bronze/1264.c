@@ -10,7 +10,7 @@ int main(){
         // fgets(inp,sizeof(inp),stdin);
         // \n -> \0 으로 변경 -> 있어도 없어도 결과는 똑같다. 
         // inp[strlen(inp)-1]='\0';
-        gets(inp);
+        gets(&inp);
         if(inp[0]=='#'){
             break;
         }
