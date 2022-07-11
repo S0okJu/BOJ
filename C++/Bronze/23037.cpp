@@ -10,7 +10,7 @@ int main(){
 
     for(int i=0 ; i< inp.length();i++)    
     {
-        ans +=pow(stoi(inp[i]),5);
+        ans +=pow(inp[i]-'0',5);
     }
     cout << ans;
     return 0;
