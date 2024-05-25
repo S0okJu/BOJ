@@ -1,4 +1,4 @@
-package Sliver
+package Silver
 
 import (
 	"fmt"
@@ -37,7 +37,7 @@ func DayCalculator(date Date) int {
 	return day
 }
 
-func Bronze1308() {
+func Silver1308() {
 	var date1, date2 Date
 	fmt.Scanf("%d %d %d", &date1.Year, &date1.Month, &date1.Day)
 	fmt.Scanf("%d %d %d", &date2.Year, &date2.Month, &date2.Day)
