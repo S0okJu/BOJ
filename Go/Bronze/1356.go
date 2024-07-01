@@ -1,4 +1,4 @@
-package Bronze
+package main
 
 import "fmt"
 
