@@ -1,4 +1,4 @@
-package Silver
+package main
 
 import (
 	"fmt"
