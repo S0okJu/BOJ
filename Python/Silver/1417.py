@@ -1,29 +1,19 @@
 
 def counter(n,candidates):
+    cnt = 0
     if n == 1:
         return 0
     
-    dasom = candidates[0]
-    sorted_candidates = sorted(candidates[1:])
-    cnt = 0
-    equal_num_cnt = 0
+    while candidates.index(max(candidates)) != 0:
+        candidates[candidates.index(max(candidates))] -= 1    
+        candidates[0] +=1
+        cnt +=1
     
-    for i in range(len(sorted_candidates)):
-        if sorted_candidates[i] > dasom:
-            while True:
-                if sorted_candidates[i] <= dasom:
-                    break
-                else:
-                    sorted_candidates[i] = sorted_candidates[i] - 1
-                    dasom = dasom + 1
-                    cnt = cnt+1
-    
-        elif sorted_candidates[i] == dasom:
-            equal_num_cnt
-    
-    if equal_num_cnt == len(sorted_candidates):
-        return 1
-            
+    for i in range(1,n):
+        if candidates[0] == candidates[i]:
+            candidates[0] +=1
+            candidates[i] -=1
+            cnt +=1
     return cnt 
 
 
