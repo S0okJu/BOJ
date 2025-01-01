@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func main() {
+func Bronze2744() {
 	var inp string
 	var result string
 

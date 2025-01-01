@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-func main() {
+func Bronze6840() {
 	var inputArray [3]int
 	var inp int
 

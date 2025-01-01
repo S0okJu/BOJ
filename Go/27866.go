@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func Bronze27866() {
 	var input string
 	var inpNum int
 

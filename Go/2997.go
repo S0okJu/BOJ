@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-func main() {
+func Bronze2997() {
 	var numbers [3]int
 	var frontDif int
 	var backDif int
