@@ -23,7 +23,3 @@ func Silver2670() {
 	fmt.Printf("%.3f", result)
 
 }
-
-func main() {
-	Silver2670()
-}
