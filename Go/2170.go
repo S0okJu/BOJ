@@ -14,7 +14,7 @@ type Line struct {
 	end   int
 }
 
-func main() {
+func Gold2170() {
 	reader := bufio.NewReader(os.Stdin)
 
 	var n int
