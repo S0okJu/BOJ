@@ -38,7 +38,3 @@ func Silver15652() {
 
 	backtrack(0, 1)
 }
-
-func main() {
-	Silver15652()
-}
