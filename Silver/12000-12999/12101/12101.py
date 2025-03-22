@@ -26,6 +26,5 @@ def backtracking():
         backtracking()
         total.pop()
         
-
 backtracking()
 print(-1)
