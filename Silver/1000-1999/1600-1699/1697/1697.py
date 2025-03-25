@@ -19,11 +19,4 @@ if __name__ == '__main__':
         for i in (curr -1, curr+1, curr * 2):
             if 0 <= i <= 100_000 and not dist[i]:
                 dist[i] = dist[curr] + 1
-                q.append(i)
-
-    
-
-    
-    
-    
-    
+                q.append(i)  
