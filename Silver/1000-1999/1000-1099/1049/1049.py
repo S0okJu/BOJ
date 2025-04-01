@@ -12,7 +12,7 @@ def solution(N, bundles, ones):
     
     while target > 0:
         
-        # 6개 미만이라도 묶음이 가격이 더 쌀 수 있음 
+        # 6개 미만이라도 묶음 가격이 더 쌀 수 있음 
         if target < 6:
             if min_bundle < (target * min_ones):
                 result += min_bundle
