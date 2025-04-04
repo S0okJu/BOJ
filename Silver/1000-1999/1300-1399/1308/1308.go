@@ -42,7 +42,7 @@ func DayCalculator(date Date) int {
 	return day
 }
 
-func Silver1308() {
+func main() {
 	// 1. today, dday을 입력받는다.
 	var today, dday Date
 	fmt.Scanf("%d %d %d", &today.Year, &today.Month, &today.Day)
