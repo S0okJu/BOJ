@@ -27,7 +27,7 @@ def solution(N, networks):
         
         return infected_cnt
     
-    # 1번 컴퓨터 
+    # 1번 컴퓨터 기준 전염된 컴퓨터 수 구하기
     result = bfs(1)
     return result
             

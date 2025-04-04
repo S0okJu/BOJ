@@ -21,13 +21,12 @@ def solution(compressed: str) -> int:
                 stack.append(temp * multiplier)
             else:
                 stack.append(temp)
-        elif ch.isdigit():
-            stack.append(ch)
         else:
             stack.append(ch)
 
     # 최종 길이 계산
     total_length = 0
+    print(stack)
     for item in stack:
         if isinstance(item, int):
             total_length += item
