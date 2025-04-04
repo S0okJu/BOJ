@@ -2,7 +2,7 @@ import math
 import sys 
 input = sys.stdin.readline
 
-def solution(x1:int, y1:int, r1:int, x2:int, y2:int, r2:int):
+def solution(x1:int, y1:int, r1:int, x2:int, y2:int, r2:int) -> int:
     # 두 중심 사이의 거리
     d = math.hypot(x2-x1, y2-y1)
     
