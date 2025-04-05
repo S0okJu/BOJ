@@ -19,7 +19,6 @@ for i in range(N):
     
     # 누적합이 같으면 무조건 diff_sum은 0이 나옴 
     count += count_map[diff_sum]
-
     count_map[diff_sum] += 1
 
 
