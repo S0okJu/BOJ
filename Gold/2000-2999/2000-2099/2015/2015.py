@@ -1,24 +1,25 @@
-import sys
+from typing import List
+from collections import defaultdict
+import sys 
 input = sys.stdin.readline
 
-n, k = map(int, input().split())
-input_data = list(map(int, input().split()))  
-
-sum_dict = {0: 1}
-
-sum_ = 0
-answer = 0
-
-for i in input_data:
-    sum_ += i
+def solution(N: int, K: int, A: List) -> int:
+    sum_ = 0
+    result = 0
+    sum_map = defaultdict(int)
+    sum_map[0] = 1
+    for i in range(N):
+        sum_ += A[i]    
+        result += sum_map[sum_-K]
+        sum_map[sum_] +=1
     
-    # 누적합 x - 누적 합 y = k
-    # x- k = y 
-    # y가 존재한다면 누적합도 반드시 존재한다는 의미
-    if sum_ - k in sum_dict.keys():
-        answer += sum_dict[sum_ - k]
+    return result
+        
 
-    sum_dict[sum_] = sum_dict.get(sum_, 0) + 1
+if __name__ == '__main__':
+    # Input 
+    N, K = map(int,input().split())
+
+    A = list(map(int,input().split()))
     
-
-print(answer)
+    print(solution(N,K,A))
