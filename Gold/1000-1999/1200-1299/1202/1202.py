@@ -1,4 +1,4 @@
-from heapq import heappush, heappop
+from heapq import push, heappop
 from collections import deque
 from typing import List
 import sys 
