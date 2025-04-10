@@ -9,8 +9,12 @@ def solution(N:int, lessons:List[List[int]]) -> int:
     classrooms = []
     
     for lesson_id, start, end in lessons:
+        print(f"{lesson_id}, {start}, {end}")
         if classrooms and classrooms[0][0] <=start:
+            print(f"pop {classrooms}")
             heappop(classrooms)
+        
+        print(f"push {end}")
         heappush(classrooms, (end,lesson_id))
     print(classrooms)
     return len(classrooms)
