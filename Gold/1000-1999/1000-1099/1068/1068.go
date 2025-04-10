@@ -53,6 +53,7 @@ func (g *Graph) delete(target int) {
 				delete(g.edges[current], neighbor)
 				continue
 			} else {
+				// 큐에 넣고 순회하기
 				if !visited[neighbor] {
 					visited[neighbor] = true
 					q.PushBack(neighbor)
