@@ -3,14 +3,15 @@ from typing import List
 import sys 
 input = sys.stdin.readline
 
+MALE = 1
+FEMALE = 2
+
+ON = 1
+OFF = 0
+
 def solution(swicthes_cnt:int, switches:List[int], students:List[int])-> List[int]:
-    MALE = 1
-    FEMALE = 2
     
-    def convert(target:int):
-        ON = 1
-        OFF = 0
-    
+    def convert(target:int):    
         if switches[target] == ON:
             switches[target] = OFF
         else:
@@ -27,7 +28,7 @@ def solution(swicthes_cnt:int, switches:List[int], students:List[int])-> List[in
 
             left = idx - 1
             right = idx + 1
-
+            
             while left >= 0 and right < switches_cnt and switches[left] == switches[right]:
                 convert(left)
                 convert(right)
@@ -51,7 +52,7 @@ if __name__ == '__main__':
         a, b = map(int,input().split())
         students.append((a,b))
     
-    result =solution(switches_cnt, switches, students )
+    result = solution(switches_cnt, switches, students)
     
     for chunk in chunk_list(result,20):
         print(*chunk)
