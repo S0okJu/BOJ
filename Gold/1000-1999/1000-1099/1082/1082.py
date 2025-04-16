@@ -3,7 +3,7 @@ import sys
 input = sys.stdin.readline
 
 
-def solution(N:int, price:List[int], M:int) -> int:
+def solution(N:int, price:List[int], ready_price:int) -> int:
     
     # N = 1일 경우 0만 구매할 수 있음
     if N == 1:
@@ -32,12 +32,12 @@ def solution(N:int, price:List[int], M:int) -> int:
     for i in range(count):
         base_cost = nonzero_min_cost if i==0 else min_cost
         
-        for d in range(N-1,-1,-1):
+        for d in range(N, -1,-1,-1):
             if i ==0 and d == 0:
                 continue
             
             diff = price[d] - base_cost
-            if diff <= leftover:
+            if diff < leftover:
                 # 최대 값으로 업데이트
                 if d > result[i]:
                     result[i] = d
@@ -46,7 +46,7 @@ def solution(N:int, price:List[int], M:int) -> int:
                     
     
     return int(''.join(map(str,result)))
-    
+
 
 if __name__ == '__main__':
     N = int(input())

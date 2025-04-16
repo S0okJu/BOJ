@@ -13,6 +13,7 @@ def solution(N:int):
     # 작업을 수행할때 사용하는 큐 
     work_q = deque(init_nums)
     
+    # 1023개만 N을 받을 수 있음
     if N > 1023:
         return -1
     
