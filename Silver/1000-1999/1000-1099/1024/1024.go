@@ -18,9 +18,7 @@ func Solution(N int, L int) []int {
 			}
 			return result
 		}
-
 	}
-
 	return nil
 }
 func main() {
