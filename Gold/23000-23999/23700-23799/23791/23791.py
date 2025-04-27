@@ -11,6 +11,7 @@ def solution(A:List[int], B:List[int], i:int, j:int, k:int) -> Tuple[int,int]:
     right = min(k, i)
 
     while left <= right:
+        print(f"{left}, {right}")
         a_cnt = (left + right) // 2
         b_cnt = k - a_cnt
 
@@ -20,7 +21,7 @@ def solution(A:List[int], B:List[int], i:int, j:int, k:int) -> Tuple[int,int]:
 
         a_right = A[a_cnt] if a_cnt < i else float('inf')
         b_right = B[b_cnt] if b_cnt < j else float('inf')
-        
+        print(f"{a_left}, {b_left}, {a_right}, {b_right}")        
         if a_left <= b_right and b_left <= a_right:
             # k번째 원소는 a_left와 b_left 중 큰 값
             if a_left >= b_left:
