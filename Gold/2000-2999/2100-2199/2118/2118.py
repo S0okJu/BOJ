@@ -32,6 +32,7 @@ def solution(N:int, distances:List[int])->int:
     distances += distances
     
     for end in range(N*2):
+        # print(f"start: {start}, end: {end}")
         curr_sum += distances[end]
         while curr_sum > total_ // 2:
             curr_sum -= distances[start]
