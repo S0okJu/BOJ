@@ -12,7 +12,6 @@ func main() {
 
 	input, _ := reader.ReadString('\n')
 
-	input = strings.TrimSpace(input)
 	words := strings.Fields(input)
 
 	fmt.Println(len(words))
