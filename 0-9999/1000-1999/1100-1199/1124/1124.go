@@ -49,7 +49,7 @@ func isPrime(n int) bool {
 	return true
 }
 
-func Silver1124() {
+func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 	input := scanner.Text()
