@@ -14,7 +14,7 @@ type Meeting struct {
 	end   int
 }
 
-func Gold19598() {
+func main() {
 	reader := bufio.NewReader(os.Stdin)
 	var n int
 	fmt.Scanln(&n)
