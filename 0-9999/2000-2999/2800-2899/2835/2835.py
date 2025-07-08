@@ -33,7 +33,7 @@ class TVPopularity:
     def __init__(self, n, intervals):
         self.n = n
         self.intervals = intervals
-        self.diff = [0] * 86401
+        self.diff = [0] * 86401 # 초 단위로 시청자 변화량 저장(차이 배열)
         for line in intervals:
             start_sec, end_sec = self.parse_interval(line)
             for s, e in self.normalize_interval(start_sec, end_sec):

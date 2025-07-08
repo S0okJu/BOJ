@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func Bronze31403() {
+func main() {
 	var num []int = make([]int, 3)
 
 	for i := 0; i < 3; i++ {
